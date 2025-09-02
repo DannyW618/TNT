@@ -1,1 +1,4 @@
 datasets/
+embeddings/
+tntood/__pycache__/
+embeddings_compress_202509021904.tar.gz
