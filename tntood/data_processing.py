@@ -52,12 +52,14 @@ class TextEncoder:
         filename = f"{dataset_name}_{self.safe_model_name}_seed{self.random_seed}.pt"
 
         embedding_base_path = Path(embedding_base_path)
+        embedding_base_path = embedding_base_path / dataset_name
+
         return embedding_base_path / filename
 
     def encode_texts(self,
                      texts: List[str],
                      dataset_name: str,
-                     embedding_base_path: Path,
+                     embedding_base_path: Path = Path("../embeddings"),
                      use_cache: bool = True
                      ) -> torch.Tensor:
         """
@@ -100,15 +102,15 @@ class TextEncoder:
         duration = time.time() - start_time
         if self._verbose: print(f"Encoding finished in {duration:.2f}s. Shape: {embeddings.shape}")
 
-        # Save to Cache
-        if use_cache:
-            try:
-                embedding_base_path = Path(embedding_base_path)
-                embedding_base_path.mkdir(parents=True, exist_ok=True)
-                torch.save(embeddings, embedding_file)
-                if self._verbose: print(f"Embeddings saved to cache: {embedding_file}")
-            except Exception as e:
-                print(f"Warning: Failed to save embeddings to cache ({e}).")
+        # # Save to Cache
+        # if use_cache:
+        #     try:
+        #         embedding_base_path = Path(embedding_base_path)
+        #         embedding_base_path.mkdir(parents=True, exist_ok=True)
+        #         torch.save(embeddings, embedding_file)
+        #         if self._verbose: print(f"Embeddings saved to cache: {embedding_file}")
+        #     except Exception as e:
+        #         print(f"Warning: Failed to save embeddings to cache ({e}).")
 
         return embeddings
 

@@ -267,8 +267,6 @@ def train_model(training_graph: Data, num_classes_train: int, config: Dict[str, 
     try:
         training_graph = training_graph.to(device)
         model, criterion, optimizer = setup_model_and_components(training_graph.num_features, num_classes_train, config, device)
-
-        logging.info("\n--- Starting Model Training on '%s' ---", getattr(training_graph, "name", "dataset"))
         trainer = Trainer(model, training_graph, optimizer, criterion, device, config)
         trainer.train(exp_dir)
         logging.info("--- Model Training Finished ---")

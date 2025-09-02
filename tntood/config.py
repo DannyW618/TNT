@@ -12,8 +12,8 @@ DEFAULT_SETTINGS = {
 
     # --- Dataset Settings ---
     'text_encoder_model': 'all-MiniLM-L6-v2',
-    'dataset_path': Path("./TAGOOD_dataset"),
-    'embedding_path': Path("./embeddings"),
+    'dataset_path': Path("../datasets"),
+    'embedding_path': Path("../embeddings"),
     'cache_embeddings': True,
 
     # --- Model Architecture ---
@@ -35,7 +35,7 @@ DEFAULT_SETTINGS = {
     'K': 3,           # Propagation layers
     'alpha': 0.5,  
     'use_OE': False, 
-    'use_tntood': False,
+    'use_tntood': True,
 
     # --- Baseline Parameters ---
     'baseline_noise': 0.0014,

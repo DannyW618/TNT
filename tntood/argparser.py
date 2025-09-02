@@ -65,7 +65,7 @@ def parse_args() -> Tuple[List[str], Dict[str, Any]]:
 
     p.add_argument(
         "--use_tntood",
-        default=DEFAULT_SETTINGS.get("use_tntood", False),
+        default=DEFAULT_SETTINGS.get("use_tntood", True),
         action=argparse.BooleanOptionalAction,
         help="Use TNTOODModel and TNTOODLoss",
     )
