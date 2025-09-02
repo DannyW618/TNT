@@ -57,7 +57,7 @@ Key arguments:
 * `--shift_type` : Select OOD shift type (`feature`, `structure`, `text`, `text_swap`, `semantic_connection`).
 * Default settings are defined in `config.py` and more arguments are in `argparser.py`.
 
-> Note: We have also provided the ID/OOD splits embeddings, you may choose to generate your own with different perturbation configs using `ood_generation.py`.
+> TODO: We will provide the ID/OOD splits embeddings, you may choose to generate your own with different perturbation configs using `ood_generation.py`.
 
 
 ## Supported OOD Shifts
