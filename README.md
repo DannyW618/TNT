@@ -70,21 +70,16 @@ Key arguments:
 * **Label Leave Out** - Leave out a set of classes as OOD data.
 
 ## Repository Structure
-
-- **`tntood`**  
-  Primary folder containing the code for TNTOOD.
-
-- **`datasets`**  
-  Contains the dataset used. 
-
-- **`embeddings`**  
-  An embeddings folder will be created after running a given experiment setup to cache the created OOD splits for faster loading.
-
-- **`tntood/main.py`**  
-  Entry point for running experiments. Handles configuration loading, dataset preparation, model initialization, training, and evaluation.
-
-- **`tntood/runtnt.sh`**  
-  Example scripts to run experiments.
+```
+tntood/                  # Primary folder containing the code for TNTOOD
+├── main.py              # Config loading, initialisation, training, dataset preparation, evaluation
+├── runtnt.sh            # Example scripts to run experiments
+├── ood_generation.py    # OOD shifts generation code
+│
+datasets/                # Contains the dataset used
+│
+embeddings/              # Cache folder for created OOD splits after running experiments
+```
 
 ## Acknowledgement
 We thank the authors of [TSGFM](https://github.com/CurryTang/TSGFM) and [GLBench](https://github.com/NineAbyss/GLBench) for the datasets.
