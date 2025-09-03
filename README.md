@@ -34,6 +34,13 @@ gdown 1cZDOK12AVhT2MnrE6ZeLWJZLlAp81bey -O datasets.zip
 unzip datasets.zip -x "__MACOSX/*"
 ```
 
+Optional (Recommended): Download the pre-processed OOD splits via:
+```bash
+# File content is relatively large ~52GB, ensure enough disk space and bandwidth
+wget -c https://huggingface.co/datasets/DannyW618/TextTopoOOD/resolve/main/embeddings.tar.gz -O embeddings.tar.gz
+tar -xvzf embeddings.tar.gz # Ensure this is placed at top-level directory according to the Repo structure given below
+```
+
 ### 3. Running Experiments
 
 Run an experiment with:
@@ -57,7 +64,7 @@ Key arguments:
 * `--shift_type` : Select OOD shift type (`feature`, `structure`, `text`, `text_swap`, `semantic_connection`).
 * Default settings are defined in `config.py` and more arguments are in `argparser.py`.
 
-> TODO: We will provide the ID/OOD splits embeddings, you may choose to generate your own with different perturbation configs using `ood_generation.py`.
+> We have provided the OOD split embeddings/data, you may choose to generate your own with different perturbation configs using `ood_generation.py`.
 
 
 ## Supported OOD Shifts
